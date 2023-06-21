@@ -1,0 +1,17 @@
+开始学习git了，git笔记
+Git:分布式版本控制
+进入需要进行git管理的目录，输入命令git init 进行初始化，让git知道他需要管理这个目录
+命令：git add 将文件从工作区添加到暂存区
+					git add 文件名  添加一个
+					git add 文件名1 文件名2 添加多个文件
+					git add . 添加当前目录到暂存区
+		   git commit -m "提交注释"    将文件从暂存区添加到git仓库（添加到版本库）
+		   git status 查看状态
+版本回退的操作：
+	 1、查看版本，确定需要回到的时间点：
+		  (1) git log
+		  (2) git log --pretty=oneline
+	  2、回退
+			   git reset --hard 提交的编号
+回到了过去，又想回到最新的版本，则须使用命令 git reflog 查看编号，使用git reset --hard 编号即可回到最新的版本
+将线上仓库克隆到本地：git clone 线上仓库的地址
