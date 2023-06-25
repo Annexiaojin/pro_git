@@ -9,12 +9,14 @@ http协议：
 		   git commit -m "提交注释"    将文件从暂存区添加到git仓库（添加到版本库）
 		   git status 查看状态
 版本回退的操作：
-	 1、查看版本，确定需要回到的时间点：
+	 1、查看版本，确定需要回到的时间点：（回退到旧版本）
 		  (1) git log
 		  (2) git log --pretty=oneline
-	  2、回退
+	 2、回退
 			   git reset --hard 提交的编号
-回到了过去，又想回到最新的版本，则须使用命令 git reflog 查看编号，使用git reset --hard 编号即可回到最新的版本
+回到了过去，又想回到最新的版本，则须使用命令（回退到新版本）
+	1、git reflog 查看编号，
+	2、git reset --hard 编号即可回到最新的版本
 将线上仓库克隆到本地：git clone 线上仓库的地址
 提交到线上仓库：git push
 同步线上最新版本：git pull
@@ -27,5 +29,16 @@ ssh协议：
 		查看分支： git branch
 		创建分支： git branch 分支名
 		切换分支： git checkout 分支名
-		删除分支： git branch -d 分支名
 		合并分支： git merge 被合并的分支名
+		删除分支： git branch -d 分支名   先退出要删除的分支后才能进行删除
+若有人更改了线上仓库的值，再次提交之前需要先更新本地仓库。（与最后更新的进行对比）然后再次提交
+文件忽略：
+	新建一个文件，名为.gitignore  命令为： touch .gitignore
+	在.gitignore中添加规则并将其提交到线上仓库
+	此后提交文件时将按照规则进行提交
+	规则的写法：
+		1、/mtk/    过滤掉整个目录
+		2、*.zip      过滤掉所有的zip文件
+		3、/mtk/d.txt     过滤掉具体的某个文件
+		4、！index.php  不过滤掉具体的某个文件
+	注意：文件中以#开头的都是注释
