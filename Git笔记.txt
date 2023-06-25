@@ -1,6 +1,7 @@
 开始学习git了，git笔记
 Git:分布式版本控制
 进入需要进行git管理的目录，输入命令git init 进行初始化，让git知道他需要管理这个目录
+http协议：
 命令：git add 将文件从工作区添加到暂存区
 					git add 文件名  添加一个
 					git add 文件名1 文件名2 添加多个文件
@@ -17,3 +18,14 @@ Git:分布式版本控制
 将线上仓库克隆到本地：git clone 线上仓库的地址
 提交到线上仓库：git push
 同步线上最新版本：git pull
+
+ssh协议：
+	生成公私钥对指令：ssh-keygen -t rsa -C "注册邮箱"
+	克隆线上仓库到本地
+	接下来的操作与http协议一致
+关于分支相关的命令：
+		查看分支： git branch
+		创建分支： git branch 分支名
+		切换分支： git checkout 分支名
+		删除分支： git branch -d 分支名
+		合并分支： git merge 被合并的分支名
